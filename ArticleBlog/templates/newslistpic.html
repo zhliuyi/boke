@@ -6,7 +6,7 @@
 <div class="container">
   <div class="con_content">
     <div class="about_box">
-      <h2 class="nh1"><span>您现在的位置是：<a href="/" target="_blank">网站首页</a>>><a href="#" target="_blank">个人日记</a></span><b>个人日记</b></h2>
+      <h2 class="nh1"><span>您现在的位置是：<a href="/" target="_blank">网站首页</a>>><a href="#" target="_blank">个人日记</a></span><b>{{ type }}</b></h2>
       <div class="dtxw box">
 {#          {% for one in article %}#}
           {% for one in page_obj %}
@@ -29,7 +29,6 @@
             <a href="/newslistpic/1">首页</a>
             {% if page_obj.has_previous %}
                 <a href="/newslistpic/{{ page_obj.previous_page_number }}">上一页</a>
-
             {% endif %}
                 {% for page in page_range %}
                     <a href="/newslistpic/{{ page }}">{{ page }}</a>
@@ -38,12 +37,9 @@
                 <a href="/newslistpic/{{ page_obj.next_page_number }}">下一页</a>
             {% endif %}
              <a href="/newslistpic/{{ paginator.num_pages }}">尾页</a>
-
-
-
         </div>
+      </div>
     </div>
-  </div>
   <div class="blank"></div>
 </div>
   <!-- container代码 结束 -->

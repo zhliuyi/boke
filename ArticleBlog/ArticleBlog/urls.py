@@ -20,15 +20,34 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', views.index),
+    path('index2/', views.index2),
     path('about/', views.about),
     path('listpic/', views.listpic),
     path('newslistpic/', views.newslistpic),
-    re_path('newslistpic/(?P<page>\d+)', views.newslistpic),
+    re_path('newslistpic/(?P<type>\w+)/(?P<page>\d+)', views.newslistpic),
     path('base/', views.base),
     re_path('articledetails/(?P<id>\d+)', views.articledetails),
     path('addarticle/', views.addarticle),
     path('fytest/', views.fytest),
-    path('ckeditor/',include('ckeditor_uploader.urls'))
+    path('ckeditor/',include('ckeditor_uploader.urls')),
+    path("formtest/",views.formtest),
+    path("formtest2/",views.formtest2),
+    path("reqtest/",views. reqtest),
+    path("register/",views.register),
+    path("register2/",views.register2),
+    path("register3/",views.register3),
+    path("register4/",views.register4),
+    path("cspost/",views.cspost),
+
+
+    path("ajax_get/",views.ajax_get),
+    path("ajax_get_data/",views.ajax_get_data),
+    path("ajax_post/",views.ajax_post),
+    path('ajax_post_data/',views.ajax_post_data),
+    path("checkusername/",views.checkusername),
+    path("login/",views.login),
+    path("logout/",views.logout),
+
 
 
 ]

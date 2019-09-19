@@ -51,3 +51,11 @@ class Article(models.Model):
         db_table = 'article'
         verbose_name = '文章'
         verbose_name_plural = verbose_name
+
+
+class User(models.Model):
+    name=models.CharField(max_length=32)
+    password=models.CharField(max_length=32)
+
+    class Meta:
+        db_table="user"
